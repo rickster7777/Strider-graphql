@@ -4,6 +4,7 @@ import express from "express"
 import resolvers from "./graphql/resolvers.js"
 import schema from "./graphql/schema.js"
 import { graphqlHTTP } from "express-graphql"
+import "./db.js"
 
 const app = express()
 

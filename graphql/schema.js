@@ -26,6 +26,8 @@ const schema = buildSchema(`
     
     type Query {
         getCourse(id:ID): Course
+        getEvents(_id:ID): Event
+
     }
 
     input CourseInput {
@@ -47,6 +49,23 @@ const schema = buildSchema(`
 
     type Mutation {
         createCourse(input: CourseInput): Course
+        createEvent(eventInput: EventInput): Event
+    }
+
+
+    type Event {
+        _id: ID!
+        title: String!
+        description: String!
+        price: Float!
+        date: String!
+    }
+
+    input EventInput {
+        title: String!
+        description: String!
+        price: Float!
+        date: String!
     }
 
 `)
